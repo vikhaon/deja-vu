@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BASE_URL } from '../../utils/requestMethods';
 
 import Product from './Product';
 import * as S from './styles';
@@ -13,8 +14,8 @@ const Products = ({ category, filters, sort }) => {
       try {
         const response = await axios.get(
           category
-            ? `http://localhost:5033/api/products?category=${category}`
-            : `http://localhost:5033/api/products`
+            ? `${BASE_URL}/products?category=${category}`
+            : `${BASE_URL}/api/products`
         );
         setProducts(response.data);
       } catch (err) {
