@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { login } from '../../redux/apiCalls';
 
@@ -8,7 +8,6 @@ import * as S from './styles';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const { isFetching } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const handleLogin = (e) => {
@@ -34,9 +33,7 @@ const Login = () => {
           <S.Link>FORGOT YOUR PASSWORD?</S.Link>
           <S.Link>CREATE A NEW ACCOUNT</S.Link>
           <S.BottomWrapper>
-            <S.Button onClick={handleLogin} disabled={isFetching}>
-              Log in
-            </S.Button>
+            <S.Button onClick={handleLogin}>Log in</S.Button>
           </S.BottomWrapper>
         </S.Form>
       </S.LeftWrapper>

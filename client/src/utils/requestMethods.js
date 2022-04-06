@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const BASE_URL = 'https://deja-vu-server-vercel.vercel.app/api/';
+export const BASE_URL = 'https://deja-vu.herokuapp.com';
 
 const user = JSON.parse(localStorage.getItem('persist:root'))?.user;
 const currentUser = user && JSON.parse(user).currentUser;
