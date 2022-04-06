@@ -26,10 +26,7 @@ app.use(cors());
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
 
-app.get('/', (_, res) => {
-  res.send('Welcome to the Deja vu API!');
-});
-
+app.get('/', (_, res) => res.send('Welcome to the Deja vu API!'));
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
